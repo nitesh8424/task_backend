@@ -9,3 +9,11 @@ npm install
 then you can run project :
 
 node server.js
+
+# .env format 
+PORT = 5000
+DB_USERNAME=  mongodb username
+DB_PASSWORD=  mongodb password
+DATABASE= mongodb database
+SECRETKEY = thisismykey
+
