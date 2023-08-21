@@ -2,7 +2,6 @@ const express = require("express");
 const router = express.Router();
 const bcrypt = require("bcrypt");
 const jwt = require("jsonwebtoken");
-const { body, validationResult } = require("express-validator");
 const User = require("../models/User"); // Import the User model
 const verifyToken = require('../middleware/verifyToken');
 
@@ -11,16 +10,8 @@ const secret = process.env.SECRETKEY;
 // Register a new user
 router.post(
   "/register",
-  [
-    body("username").notEmpty().isAlphanumeric().trim(),
-    body("password").notEmpty().isLength({ min: 6 }),
-  ],
   async (req, res) => {
     try {
-      const errors = validationResult(req);
-      if (!errors.isEmpty()) {
-        return res.status(400).json({ errors: errors.array() });
-      }
 
       const { username, password, teamName } = req.body;
       const hashedPassword = await bcrypt.hash(password, 10);

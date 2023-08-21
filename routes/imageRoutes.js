@@ -56,24 +56,25 @@ router.get("/search", async (req, res) => {
         {
           $or: [
             { title: { $regex: keyword, $options: 'i' } },
-            { keyword: { $regex: keyword, $options: 'i' } }
+            { keywords: { $regex: keyword, $options: 'i' } }
           ]
         },
         { teamName: teamName } 
       ]
     };
     
-    if (width && height) {
+    if (width) {
       query.width = width;
+    }if(height){
       query.height = height;
     }
-
+    console.log('width', width)
     if (color) {
       query.color = color;
     }
 
     const aggregationPipeline = [];
-
+    console.log('qeyeuqwrwr', query)
     if (date) {
       aggregationPipeline.push({
         $match: {
