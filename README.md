@@ -4,6 +4,8 @@ In the project directory,
 
 clone the project and run : 
 
+create uploads folder inside project repo 
+
 npm install
 
 then you can run project :
@@ -16,4 +18,5 @@ DB_USERNAME=  mongodb username
 DB_PASSWORD=  mongodb password
 DATABASE= mongodb database
 SECRETKEY = thisismykey
+
 
