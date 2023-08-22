@@ -10,6 +10,7 @@ const imageSchema = new mongoose.Schema({
   height: { type: Number, required: true },
   teamName: { type: String, required: true },
   tag: { type: String },
+  colors : [{ type: String , required: true}],
   uploadDate: { type: Date, default: Date.now },
 });
 

@@ -62,7 +62,7 @@ router.get("/profile", verifyToken, async (req, res) => {
       username: req.username,
       teamName: req.teamName,
     };
-    console.log('prodil', profileData)
+    // console.log('prodil', profileData)
     res.status(200).json(profileData);
 });
 module.exports = router;
